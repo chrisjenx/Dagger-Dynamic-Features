@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:dist="http://schemas.android.com/apk/distribution"
+  xmlns:tools="http://schemas.android.com/tools"
+  package="com.chrisjenx.dynamicfeature">
+
+  <application tools:ignore="AllowBackup,GoogleAppIndexingWarning">
+    <activity
+      android:exported="false"
+      android:label="@string/title_activity_dynamic_feature"
+      android:name=".DynamicFeatureActivity"
+      android:theme="@style/AppTheme.NoActionBar">
+      <intent-filter>
+        <action android:name="dynamic_feature_name" />
+      </intent-filter>
+    </activity>
+  </application>
+
+  <dist:module
+    dist:instant="false"
+    dist:title="@string/title_dynamicfeature">
+    <dist:delivery>
+      <dist:install-time />
+    </dist:delivery>
+
+    <dist:fusing dist:include="true" />
+  </dist:module>
+
+</manifest>
